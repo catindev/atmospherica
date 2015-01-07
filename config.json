@@ -1,0 +1,15 @@
+{
+  "db":{
+    "name":"atmoDB",
+    "host":"67.207.152.57",
+    "port":18048,
+    "options":{"w": 1,"auto_reconnect": true}
+  },
+  "password_salt":"arukiddingwrittr?",
+  "session":{
+    "secret":"yaddayaddawrittr!",
+    "key":"session",
+    "maxAge":1186400000
+  },
+  "speedtest":false
+}

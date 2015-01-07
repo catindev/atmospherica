@@ -1,0 +1,1 @@
+(function(d){d.fn.extend({endtyping:function(e,b){b=b||1E3;var a;return this.each(function(g,c){var f=d(c);f.is(":input")&&f.keypress(function(){a&&clearTimeout(a);a=setTimeout(function(){a&&(a=null,e.call(c))},b)}).blur(function(){a&&(a=null,e.call(c))})})}})})(jQuery);

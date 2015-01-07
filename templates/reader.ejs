@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title><%= name %></title>
+        <meta poperty="og:url" content="http://atmospheri.ca/r/<%= id %>" />
+        <meta property="twitter:card" content="summary" />
+        <meta property="twitter:site" content="@atmoapp" />
+        <meta property="twitter:title" content="<% if(name != "Untitled"){ %><%= title %><% } else { %>Untitled post<% } %>" />
+        <meta property="twitter:description" content="<%= subtitle %>" />
+        <meta property="twitter:creator" content="@atmoapp" />
+        <meta property="twitter:image:src" content="http://atmospheri.ca/img/artlogo.png" />
+        <meta property="twitter:domain" content="http://atmospheri.ca" />        
+        <meta property="og:title" content="<% if(name != "Untitled"){ %><%= title %><% } else { %>Untitled post<% } %>" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="<%= subtitle %>"/>  
+        <meta property="og:image" content="http://atmospheri.ca/img/artlogo.png" />
+        <meta property="og:site_name" content="Atmospheri.ca" />      
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,latin-ext,cyrillic' rel='stylesheet' type='text/css'>    
+        <link href='http://atmospheri.ca/css/common.css' rel='stylesheet' type='text/css'>                    
+    </head>
+    <body>
+        <a class="pagelogo"></a>
+        <div class="mnu"><div class="panel">
+            <% if(owner){ %><a class="edit" title="Edit post" href="/e/<%= id %>"></a><% } %>
+            <a class="home" title="Home page" href="/"></a>
+        </div></div>
+        <div class="overlay-white">
+            <div class="reader">
+                <span class="author">Written by <a <% if(user.website){ %>href="<%= user.website %>"<% } %> target="blank"><%= user.name %></a> &middot; <%= date %></span>
+                <span class="title"><% if(name != "Untitled"){ %><%= title %><% } else { %>Untitled post<% } %></span>
+                <% if(subtitle){ %>
+                    <span class="subtitle"><%= subtitle %></span>
+                <% } %>                    
+                <span class="content" id="read-content"><%- content %></span>
+                <% if(!draft){ %>
+                <span class="share">
+                  share it<span class="share-box"><input type="text" value="http://atmo.in/<%= id %>" readonly/></span>
+                </span>
+                <% } %>               
+            </div>     
+        </div>     
+    </body>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41974764-1', 'atmospheri.ca');
+      ga('send', 'pageview');
+    </script>     
+</html>
